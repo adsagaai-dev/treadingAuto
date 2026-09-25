@@ -1,0 +1,15 @@
+{
+  "name": "treadingAuto",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "user": "ubuntu",
+  "install": "bash scripts/cloud-agent-install.sh",
+  "terminals": [
+    {
+      "name": "api",
+      "command": ".venv/bin/uvicorn treading_auto.api:app --host 0.0.0.0 --port 8000 --reload"
+    }
+  ]
+}
